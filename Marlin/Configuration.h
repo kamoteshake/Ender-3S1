@@ -75,7 +75,7 @@
 // #define ENDER_3S1_PRO
 
 // High Temp Heatbreak (for titanium, bi-metal or any other heatbeak that can handle high temps)
-// #define HIGH_TEMP_HEATBREAK
+#define HIGH_TEMP_HEATBREAK
   
 // 主控芯片
 // #define USER_STM32F103  1
@@ -121,16 +121,16 @@
    */
   #ifndef SHORT_BUILD_VERSION
     #if ENABLED(Z_AXIS_LIMIT_MODE)
-      #define SHORT_BUILD_VERSION "2.0.8.24Z_CF_0.0.1" //F103版本
+      #define SHORT_BUILD_VERSION "24ZCF_0.0.1" //F103版本
     #elif ENABLED(USER_STM32F103)
-      #define SHORT_BUILD_VERSION "2.0.8.24F1_CF_0.0.1" //F103版本
+      #define SHORT_BUILD_VERSION "24F1CF_0.0.1" //F103版本
     #elif ENABLED(USER_STM32F401)
-      #define SHORT_BUILD_VERSION "2.0.8.24F4_CF_0.0.1" // F401版本
+      #define SHORT_BUILD_VERSION "24F4CF_0.0.1" // F401版本
     #endif
   #endif
 
   // Author info of this build printed to the host during boot and M115
-  #define STRING_CONFIG_H_AUTHOR "Creality" // Who made the changes.
+  #define STRING_CONFIG_H_AUTHOR "Kamoteshake" // Who made the changes.
   //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
   #define MACVERSION        STRING_CONFIG_H_AUTHOR
   #define SOFTVERSION       SHORT_BUILD_VERSION
