@@ -73,6 +73,9 @@
 
 #define ENDER_3S1_PLUS
 // #define ENDER_3S1_PRO
+
+// High Temp Heatbreak (for titanium, bi-metal or any other heatbeak that can handle high temps)
+// #define HIGH_TEMP_HEATBREAK
   
 // 主控芯片
 // #define USER_STM32F103  1
@@ -600,7 +603,12 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 320
+#if ENABLED(ENDER_3S1_PRO) || ENABLED(HIGH_TEMP_HEATBREAK) // s1 pro comes with all metal heatbreak
+  #define HEATER_0_MAXTEMP 320
+#else
+  #define HEATER_0_MAXTEMP 275
+#endif
+
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
