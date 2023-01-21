@@ -1976,7 +1976,7 @@
 // ender-3s1 plus 为低温版本
 #if ENABLED(ENDER_3S1_PLUS) || ENABLED(ENDER_3S1) 
   #define PREHEAT_1_LABEL       "PLA"
-  #define PREHEAT_1_TEMP_HOTEND 200
+  #define PREHEAT_1_TEMP_HOTEND 210
   #define PREHEAT_1_TEMP_BED     60
   #define PREHEAT_1_TEMP_CHAMBER 35
   #define PREHEAT_1_FAN_SPEED    255 // Value from 0 to 255
@@ -1988,7 +1988,7 @@
   #define PREHEAT_2_FAN_SPEED    255 // Value from 0 to 255
 #else
   #define PREHEAT_1_LABEL       "PLA"
-  #define PREHEAT_1_TEMP_HOTEND 200
+  #define PREHEAT_1_TEMP_HOTEND 210
   #define PREHEAT_1_TEMP_BED     60
   #define PREHEAT_1_TEMP_CHAMBER 35
   #define PREHEAT_1_FAN_SPEED    255 // Value from 0 to 255
