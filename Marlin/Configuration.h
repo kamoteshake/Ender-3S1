@@ -664,9 +664,14 @@
 
       #if ENABLED(ENDER_3S1_PRO) || ENABLED(HIGH_TEMP_HEATBREAK)
         /* Ender-3 S1 Pro or with high temp hotend (bi metal throat) */
-        #define DEFAULT_Kp 14.49
-        #define DEFAULT_Ki 0.96
-        #define DEFAULT_Kd 54.59
+        // #define DEFAULT_Kp 14.49
+        // #define DEFAULT_Ki 0.96
+        // #define DEFAULT_Kd 54.59
+
+        /* Custom PID setting M303 E0 C12 S230 */
+        #define DEFAULT_Kp 13.81
+        #define DEFAULT_Ki 1.17
+        #define DEFAULT_Kd 40.75
       #else
         /* Stock Ender-3 S1 or Stock Ender-3 Plus */
         #define DEFAULT_Kp 17.10
