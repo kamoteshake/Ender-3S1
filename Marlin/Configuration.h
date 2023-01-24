@@ -658,13 +658,22 @@
     // #define DEFAULT_Kd 114.00
     //M303 C12 S200
       /*Ender-3 max*/
-     // #define DEFAULT_Kp 10.42
-     // #define DEFAULT_Ki 0.5
-      //#define DEFAULT_Kd 53.18
+      // #define DEFAULT_Kp 10.42
+      // #define DEFAULT_Ki 0.5
+      // #define DEFAULT_Kd 53.18
 
-      #define DEFAULT_Kp 14.49
-      #define DEFAULT_Ki 0.96
-      #define DEFAULT_Kd 54.59
+      #if ENABLED(ENDER_3S1_PRO) || ENABLED(HIGH_TEMP_HEATBREAK)
+        /* Ender-3 S1 Pro or with high temp hotend (bi metal throat) */
+        #define DEFAULT_Kp 14.49
+        #define DEFAULT_Ki 0.96
+        #define DEFAULT_Kd 54.59
+      #else
+        /* Stock Ender-3 S1 or Stock Ender-3 Plus */
+        #define DEFAULT_Kp 17.10
+        #define DEFAULT_Ki 1.39
+        #define DEFAULT_Kd 52.79
+      #endif
+
    #endif
 #endif // PIDTEMP
 
