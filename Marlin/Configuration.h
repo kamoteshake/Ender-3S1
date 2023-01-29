@@ -121,11 +121,11 @@
    */
   #ifndef SHORT_BUILD_VERSION
     #if ENABLED(Z_AXIS_LIMIT_MODE)
-      #define SHORT_BUILD_VERSION "24ZCF_0.0.1" //F103版本
+      #define SHORT_BUILD_VERSION "24ZCF_0.0.2" //F103版本
     #elif ENABLED(USER_STM32F103)
-      #define SHORT_BUILD_VERSION "24F1CF_0.0.1" //F103版本
+      #define SHORT_BUILD_VERSION "24F1CF_0.0.2" //F103版本
     #elif ENABLED(USER_STM32F401)
-      #define SHORT_BUILD_VERSION "24F4CF_0.0.1" // F401版本
+      #define SHORT_BUILD_VERSION "24F4CF_0.0.2" // F401版本
     #endif
   #endif
 
@@ -1250,7 +1250,7 @@
 // #define NOZZLE_TO_PROBE_OFFSET { -40, -50, 0 }  //(-40,-60,0)
   #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }
 #else
-  #define NOZZLE_TO_PROBE_OFFSET { -40, -40, 0 }
+  #define NOZZLE_TO_PROBE_OFFSET { -48, 0, 0 } // KS - Applied 0 y offset upgrade
 #endif
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
