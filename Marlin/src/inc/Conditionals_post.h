@@ -2662,7 +2662,7 @@
     #define XY_PROBE_FEEDRATE ((homing_feedrate_mm_m.x + homing_feedrate_mm_m.y) / 2)
   #endif
   #ifndef NOZZLE_TO_PROBE_OFFSET
-    #define NOZZLE_TO_PROBE_OFFSET { -40, -40, 0 }
+    #define NOZZLE_TO_PROBE_OFFSET { -48, 0, 0 } // KS - installed 0 y offset
 
 
   #endif
