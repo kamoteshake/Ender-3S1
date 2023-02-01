@@ -669,9 +669,9 @@
         // #define DEFAULT_Kd 54.59
 
         /* Custom PID setting M303 E0 C20 S230 */
-        #define DEFAULT_Kp 14.67
-        #define DEFAULT_Ki 1.26
-        #define DEFAULT_Kd 42.83
+        #define DEFAULT_Kp 14.17
+        #define DEFAULT_Ki 1.20
+        #define DEFAULT_Kd 41.65
       #else
         /* Stock Ender-3 S1 or Stock Ender-3 Plus */
         #define DEFAULT_Kp 17.10
