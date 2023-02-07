@@ -3117,8 +3117,8 @@ static_assert(   _ARR_TEST(3,0) && _ARR_TEST(3,1) && _ARR_TEST(3,2)
       #error "SPINDLE_LASER_PWM pin conflicts with Z_STEP_PIN."
     #elif _PIN_CONFLICT(CASE_LIGHT)
       #error "SPINDLE_LASER_PWM_PIN conflicts with CASE_LIGHT_PIN."
-    // #elif _PIN_CONFLICT(E0_AUTO_FAN) //107011 -20210928
-    //   #error "SPINDLE_LASER_PWM_PIN conflicts with E0_AUTO_FAN_PIN."
+    #elif _PIN_CONFLICT(E0_AUTO_FAN) && !defined(LASER_FEATURE) // KS using condition instead of just commenting the check
+      #error "SPINDLE_LASER_PWM_PIN conflicts with E0_AUTO_FAN_PIN."
     #elif _PIN_CONFLICT(E1_AUTO_FAN)
       #error "SPINDLE_LASER_PWM_PIN conflicts with E1_AUTO_FAN_PIN."
     #elif _PIN_CONFLICT(E2_AUTO_FAN)
@@ -3135,7 +3135,7 @@ static_assert(   _ARR_TEST(3,0) && _ARR_TEST(3,1) && _ARR_TEST(3,2)
       #error "SPINDLE_LASER_PWM_PIN conflicts with E7_AUTO_FAN_PIN."
     #elif _PIN_CONFLICT(FAN)
       #error "SPINDLE_LASER_PWM_PIN conflicts with FAN_PIN."
-    #elif _PIN_CONFLICT(FAN1)
+    #elif _PIN_CONFLICT(FAN1) && !defined(LASER_FEATURE) // KS adding condition instead of commenting out the check.
       #error "SPINDLE_LASER_PWM_PIN conflicts with FAN1_PIN."
     #elif _PIN_CONFLICT(FAN2)
       #error "SPINDLE_LASER_PWM_PIN conflicts with FAN2_PIN."
