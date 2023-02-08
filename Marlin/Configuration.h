@@ -63,6 +63,9 @@
 #ifndef ENDER_MACHINE_OVERRIDE
   #define ENDER_3S1_PRO
 #endif
+
+// High Temp Heatbreak (for titanium, bi-metal or any other heatbeak that can handle high temps)
+#define HIGH_TEMP_HEATBREAK // KS
   
 // 主控芯片
 #ifdef MCU_STM32F401RC
@@ -739,7 +742,11 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
-#define HEATER_0_MAXTEMP 320
+#if ENABLED(ENDER_3S1_PRO) || ENABLED(HIGH_TEMP_HEATBREAK) // KS // s1 pro comes with all metal heatbreak
+  #define HEATER_0_MAXTEMP 320
+#else
+  #define HEATER_0_MAXTEMP 275
+#endif
 #define HEATER_1_MAXTEMP 275
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
@@ -789,9 +796,22 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-      #define DEFAULT_Kp 16.39
-      #define DEFAULT_Ki 1.56
-      #define DEFAULT_Kd 42.95
+    #if ENABLED(ENDER_3S1_PRO) || ENABLED(HIGH_TEMP_HEATBREAK) // KS
+        /* Ender-3 S1 Pro or with high temp hotend (bi metal throat) */
+        // #define DEFAULT_Kp 14.49
+        // #define DEFAULT_Ki 0.96
+        // #define DEFAULT_Kd 54.59
+
+        /* Custom PID setting - M303 E0 C20 S230 */ // KS
+        #define DEFAULT_Kp 14.17
+        #define DEFAULT_Ki 1.20
+        #define DEFAULT_Kd 41.65
+      #else
+        /* Stock Ender-3 S1 or Stock Ender-3 Plus */
+        #define DEFAULT_Kp 17.10
+        #define DEFAULT_Ki 1.39
+        #define DEFAULT_Kd 52.79
+      #endif
   #endif
 #endif
 
