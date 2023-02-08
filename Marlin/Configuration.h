@@ -87,7 +87,7 @@
   #endif
 
   // Author info of this build printed to the host during boot and M115
-  #define STRING_CONFIG_H_AUTHOR "Synman" // Who made the changes.
+  #define STRING_CONFIG_H_AUTHOR "Kamoteshake" // Who made the changes.
   //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
   #define MACVERSION        STRING_CONFIG_H_AUTHOR
   #define SOFTVERSION       SHORT_BUILD_VERSION
@@ -123,16 +123,16 @@
   #endif
 
   // Author info of this build printed to the host during boot and M115
-  #define STRING_CONFIG_H_AUTHOR "Synman" // Who made the changes.
+  #define STRING_CONFIG_H_AUTHOR "Kamoteshake" // Who made the changes.
   //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
   #define MACVERSION        STRING_CONFIG_H_AUTHOR
   #define SOFTVERSION       SHORT_BUILD_VERSION
   #define MACHINE_TYPE      "Ender-3 S1 Plus"
 
   #ifndef ENDER_MACHINE_OVERRIDE
-    #define FIRMWARE_VERSION  "2.1.x-+A"
+    #define FIRMWARE_VERSION  "2.1.x-0.1"
   #elif ENABLED(AUTO_BED_LEVELING_BILINEAR)
-    #define FIRMWARE_VERSION  "2.1.x-+A"
+    #define FIRMWARE_VERSION  "2.1.x-0.1"
   #else
       #define FIRMWARE_VERSION "2.1.x-+U" STR(GRID_MAX_POINTS_X)
   #endif
@@ -160,7 +160,7 @@
   #endif
 
   // Author info of this build printed to the host during boot and M115
-  #define STRING_CONFIG_H_AUTHOR "Synman" // Who made the changes.
+  #define STRING_CONFIG_H_AUTHOR "Kamoteshake" // Who made the changes.
   //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
   #define MACVERSION        STRING_CONFIG_H_AUTHOR
   #define SOFTVERSION       SHORT_BUILD_VERSION
