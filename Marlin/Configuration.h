@@ -1684,8 +1684,8 @@
  *     O-- FRONT --+
  */
 
-#define NOZZLE_TO_PROBE_OFFSET_X -31.5
-#define NOZZLE_TO_PROBE_OFFSET_Y -41.8
+#define NOZZLE_TO_PROBE_OFFSET_X -48  // KS - for 0 y offset upgrade
+#define NOZZLE_TO_PROBE_OFFSET_Y 0    // KS
 #define NOZZLE_TO_PROBE_OFFSET { NOZZLE_TO_PROBE_OFFSET_X, NOZZLE_TO_PROBE_OFFSET_Y, 0 }
 
 // Most probes should stay away from the edges of the bed, but
@@ -1795,7 +1795,7 @@
  * These options are most useful for the BLTouch probe, but may also improve
  * readings with inductive probes and piezo sensors.
  */
-#define PROBING_HEATERS_OFF       // Turn heaters off when probing
+// #define PROBING_HEATERS_OFF       // KS // Turn heaters off when probing
 #if ENABLED(PROBING_HEATERS_OFF)
   // #define WAIT_FOR_BED_HEATER     // Wait for bed to heat back up between probes (to improve accuracy)
   // #define WAIT_FOR_HOTEND         // Wait for hotend to heat back up between probes (to improve accuracy & prevent cold extrude)
