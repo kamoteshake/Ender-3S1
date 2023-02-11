@@ -3,7 +3,6 @@ This is what I use for my personal Ender 3 S1 Plus. This firmware may not work w
 
 <!-- White Space -->
 $~$
-
 ## Upgrades
 Here are the upgrades I installed on my Ender 3 S1 Plus.
 
@@ -35,7 +34,6 @@ Marlin is optimized to build with the **PlatformIO IDE** extension for **Visual 
 
 <!-- White Space -->
 $~$
-
 ## Special Thanks 💖
 | | |
 |----------|------------|
@@ -44,7 +42,6 @@ $~$
 
 <!-- White Space -->
 $~$
-
 ## Disclaimer
 I configured this firmware for my Ender 3 S1 Plus. So this is taylored for my S1 Plus. I haven't tested this to any other machines. This also serve as my playground to test firmware features and other configurations. There will be bugs and kinks.
 
