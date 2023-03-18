@@ -1026,8 +1026,8 @@
  */
 #define CLASSIC_JERK   //转弯时最小速度变化（抖动）
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 5.0
-  #define DEFAULT_YJERK 5.0
+  #define DEFAULT_XJERK 10.0  //KS - updated jerk
+  #define DEFAULT_YJERK 10.0  //KS - updated jerk
   #define DEFAULT_ZJERK  0.3
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
