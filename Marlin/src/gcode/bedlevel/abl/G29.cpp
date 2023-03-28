@@ -914,8 +914,17 @@ G29_TYPE GcodeSuite::G29() {
   // Sync the planner from the current_position
   if (planner.leveling_active) sync_plan_position();
 
+  #if ENABLED(DWIN_CREALITY_LCD)
+    DWIN_CompletedLeveling();
+  #endif
+
+  settings.save();
+  process_subcommands_now_P(PSTR("G28"));  //��ԭ��
+  // process_subcommands_now_P("G1 Z10");// 修改为z10 与屏幕显示的数据保持一致
+  // process_subcommands_now_P("G1 Z0");// Z10 有偏移风险
+
   #if HAS_BED_PROBE
-    probe.move_z_after_probing();
+    probe.move_z_after_probing(); // KS - moved the probing end script after the home command
   #endif
 
   #ifdef Z_PROBE_END_SCRIPT
@@ -924,14 +933,6 @@ G29_TYPE GcodeSuite::G29() {
     process_subcommands_now_P(PSTR(Z_PROBE_END_SCRIPT));
   #endif
 
-  #if ENABLED(DWIN_CREALITY_LCD)
-    DWIN_CompletedLeveling();
-  #endif
-
-  settings.save();
-  process_subcommands_now_P(PSTR("G28"));  //��ԭ��
-  // process_subcommands_now_P("G1 Z10");// 修改为z10 与屏幕显示的数据保持一致
-  process_subcommands_now_P("G1 Z0");// Z10 有偏移风险
   report_current_position();
 
   //do_blocking_move_to_xy(safe_homing_xy);
