@@ -121,11 +121,11 @@
    */
   #ifndef SHORT_BUILD_VERSION
     #if ENABLED(Z_AXIS_LIMIT_MODE)
-      #define SHORT_BUILD_VERSION "24ZCF_0.0.4" //F103版本
+      #define SHORT_BUILD_VERSION "24ZCF_0.0.5" //F103版本
     #elif ENABLED(USER_STM32F103)
-      #define SHORT_BUILD_VERSION "24F1CF_0.0.4" //F103版本
+      #define SHORT_BUILD_VERSION "24F1CF_0.0.5" //F103版本
     #elif ENABLED(USER_STM32F401)
-      #define SHORT_BUILD_VERSION "24F4CF_0.0.4" // F401版本
+      #define SHORT_BUILD_VERSION "24F4CF_0.0.5" // F401版本
     #endif
   #endif
 
