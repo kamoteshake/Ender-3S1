@@ -1254,6 +1254,12 @@ void RTSSHOW::RTS_HandleData(void)
           else
         #endif
           {
+            // KS - add this to keep the target temp when the pause is triggered by the SD Print.
+            if(!temphot && thermalManager.temp_hotend[0].target)
+            {
+              temphot = thermalManager.temp_hotend[0].target;
+            }
+
             planner.synchronize();
             memset(commandbuf, 0, sizeof(commandbuf));
             sprintf_P(commandbuf, PSTR("M109 S%i"), temphot);
